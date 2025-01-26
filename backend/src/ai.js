@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-require('dotenv').config({path:'../.env'})
+require('dotenv').config({path:'../.env.development'})
 const { GoogleGenerativeAI  } = require('@google/generative-ai')
 const ai = new GoogleGenerativeAI(process.env.API_KEY)
 const instructions = require('./model_instruction')

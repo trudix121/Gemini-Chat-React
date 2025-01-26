@@ -83,7 +83,7 @@ const AIChatLayout: React.FC = () => {
 
   return (
     <div className={`flex h-screen overflow-hidden ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
-      <Sidebar isDarkMode={isDarkMode} isSidebarOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+      {/*<Sidebar isDarkMode={isDarkMode} isSidebarOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />*/}
       <div className="flex flex-col flex-grow">
         <Header
           isDarkMode={isDarkMode}

@@ -19,7 +19,7 @@ const Messages: React.FC<MessagesProps> = ({ messages, isDarkMode }) => {
       {messages.map((msg) => (
         <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
           <div
-            className={`px-4 py-3 rounded-2xl max-w-[80%] shadow-md ${
+            className={`px-4 py-3 rounded-2xl max-w-[50%] shadow-md ${
               msg.sender === 'user'
                 ? isDarkMode
                   ? 'bg-blue-800 text-white'

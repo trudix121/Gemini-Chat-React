@@ -1,6 +1,6 @@
 import React from 'react';
 import Select, { SingleValue } from 'react-select';
-import { Send, Search } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { ModelOption, ModelType } from '../types';
 import { customSelectStyles } from '../utils/selectStyles';
 
@@ -22,7 +22,6 @@ const InputArea: React.FC<InputAreaProps> = ({
   input,
   onInputChange,
   onSendMessage,
-  onSearch,
   isDarkMode,
   selectedModel,
   onModelChange,
@@ -42,7 +41,7 @@ const InputArea: React.FC<InputAreaProps> = ({
         value={input}
         onChange={onInputChange}
         onKeyPress={(e) => e.key === 'Enter' && onSendMessage()}
-        placeholder="Ask me anything..."
+        placeholder={`Ask me anything => ${selectedModel.label}`}
         className={`flex-grow p-3 rounded-xl ${
           isDarkMode ? 'bg-gray-700 text-white border-gray-600' : 'border-gray-300'
         }`}
@@ -54,14 +53,6 @@ const InputArea: React.FC<InputAreaProps> = ({
         }`}
       >
         <Send size={20} />
-      </button>
-      <button
-        onClick={() => onSearch(input)}
-        className={`p-3 rounded-xl text-white ${
-          isDarkMode ? 'bg-purple-700' : 'bg-purple-500'
-        }`}
-      >
-        <Search size={20} />
       </button>
       <Select
         value={selectedModel}
